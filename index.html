@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="corporate-clean">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DGX Spark · AI 算力服务器产品推介</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" id="theme-link" href="assets/themes/corporate-clean.css">
+<link rel="stylesheet" href="assets/animations/animations.css">
+<style>
+/* Custom styles for this deck */
+.spec-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:14px}
+.spec-table th{text-align:left;padding:10px 14px;background:var(--surface-2);border-bottom:2px solid var(--accent);color:var(--text-1);font-weight:600}
+.spec-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-2);vertical-align:top}
+.spec-table tr:hover td{background:var(--bg-soft)}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.vs-card{padding:24px;border-radius:var(--radius)}
+.vs-good{border-top:3px solid var(--good);background:var(--surface)}
+.vs-bad{border-top:3px solid var(--bad);background:var(--surface)}
+.vs-card h3{margin:0 0 12px;font-size:20px}
+.vs-card ul{padding-left:18px;font-size:14px;line-height:1.9;color:var(--text-2);margin:0}
+.vs-card li{margin-bottom:4px}
+.code-block{background:#0d1117;color:#c9d1d9;padding:16px 20px;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:12px;line-height:1.6;overflow-x:auto;margin-top:12px;white-space:pre}
+.price-tag{font-size:48px;font-weight:800;color:var(--accent)}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;margin-right:6px}
+.badge-green{background:rgba(26,175,108,.12);color:var(--good)}
+.badge-red{background:rgba(224,68,90,.12);color:var(--bad)}
+.badge-blue{background:rgba(59,108,255,.12);color:var(--accent)}
+.arch-timeline{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.arch-item{flex:1;min-width:140px;padding:12px 16px;border-radius:var(--radius-sm);background:var(--surface-2);border-left:3px solid var(--text-3);font-size:13px}
+.arch-item.latest{border-left-color:var(--accent);background:var(--grad-soft)}
+.arch-item .year{font-weight:700;color:var(--text-1);display:block;margin-bottom:4px}
+.arch-item .name{color:var(--text-2)}
+</style>
+</head>
+<body data-themes="corporate-clean,tokyo-night,minimal-white,pitch-deck-vc,arctic-cool" data-theme-base="assets/themes/">
+<div class="deck">
+
+<!-- P1: Cover -->
+<section class="slide is-active" data-title="封面">
+  <div class="anim-stagger-list">
+    <p class="kicker">NVIDIA DGX Spark · 产品推介</p>
+    <h1 class="h1 anim-fade-up" data-anim="fade-up">
+      全球最小 <span class="gradient-text">AI 算力服务器</span><br>麻雀虽小，五脏俱全
+    </h1>
+    <p class="lede">轻量级私有化大模型部署方案 · 桌面即机房 · 插电即用</p>
+    <div class="row wrap mt-l">
+      <span class="pill pill-accent">Blackwell 架构</span>
+      <span class="pill">128GB 统一内存</span>
+      <span class="pill">1000 TOPS</span>
+      <span class="pill">1.2KG</span>
+    </div>
+  </div>
+  <div class="deck-footer"><span class="dim2">钉钉悟空团队 · 2026</span><span class="slide-number"></span></div>
+  <div class="notes">大家好，今天给大家介绍一款革命性的 AI 算力设备——NVIDIA DGX Spark。它是全球最小的 AI 算力服务器，仅 1.2KG，却能在桌面上运行千亿参数大模型。</div>
+</section>
+
+<!-- P2: 产品定位 -->
+<section class="slide" data-title="产品定位">
+  <p class="kicker">Product Positioning</p>
+  <h2 class="h2">TA 是啥？</h2>
+  <div class="grid g2 mt-l">
+    <div class="card card-accent anim-fade-up" data-anim="fade-up">
+      <h4>🟢 Spark 机型</h4>
+      <p class="dim"><strong>轻量级 AI 算力服务器</strong>（小并发）</p>
+      <p class="dim" style="font-size:13px;margin-top:8px">全球最小 · 麻雀虽小，五脏俱全<br>桌面式部署，无需机柜机房</p>
+    </div>
+    <div class="card card-outline anim-fade-up" data-anim="fade-up">
+      <h4>🔵 其他机型</h4>
+      <p class="dim"><strong>重量级 AI 算力服务器</strong>（高吞吐）</p>
+      <p class="dim" style="font-size:13px;margin-top:8px">机架式部署，面向数据中心<br>适合大规模并发推理场景</p>
+    </div>
+  </div>
+  <div class="notes">Spark 定位非常清晰：它不是要替代数据中心的大型服务器，而是让每一张办公桌都能拥有 AI 算力。对于不需要高并发、但需要私有化部署的客户来说，这是最优解。</div>
+</section>
+
+<!-- P3: 三大核心卖点 -->
+<section class="slide" data-title="核心卖点">
+  <p class="kicker">Core Value Proposition</p>
+  <h2 class="h2">3 个核心卖点</h2>
+  <div class="grid g3 mt-l anim-stagger-list" data-anim-target>
+    <div class="card">
+      <div style="font-size:36px;margin-bottom:12px">🖥️</div>
+      <h4>桌面式设备</h4>
+      <p class="dim" style="font-size:14px">无需机柜、机房<br><strong>1.2KG</strong> 小巧身材<br>插电即用，极简部署</p>
+    </div>
+    <div class="card">
+      <div style="font-size:36px;margin-bottom:12px">💰</div>
+      <h4>超高性价比</h4>
+      <p class="dim" style="font-size:14px"><strong>4W 以内</strong>即可部署<br>Qwen3.5-122B-A10-NVFP4<br>下一代千亿级模型</p>
+    </div>
+    <div class="card">
+      <div style="font-size:36px;margin-bottom:12px">📦</div>
+      <h4>软硬一体</h4>
+      <p class="dim" style="font-size:14px">多种 AI 模型解决方案<br>量身定制<br><strong>开箱即用</strong></p>
+    </div>
+  </div>
+  <div class="notes">三个卖点分别解决了客户的三个核心痛点：部署门槛高、成本太高、技术复杂度大。Spark 把这三个问题一次性解决了。</div>
+</section>
+
+<!-- P4: 客户画像 -->
+<section class="slide" data-title="客户画像">
+  <p class="kicker">Target Customers</p>
+  <h2 class="h2">卖给谁？3 大客群</h2>
+  <div class="grid g3 mt-l anim-stagger-list" data-anim-target>
+    <div class="card card-soft">
+      <span class="badge badge-blue">客群 A</span>
+      <h4 style="margin-top:8px">中小微企业</h4>
+      <p class="dim" style="font-size:14px">预算有限，但希望<strong>私有化部署</strong>本地大模型，保障数据安全</p>
+    </div>
+    <div class="card card-soft">
+      <span class="badge badge-green">客群 B</span>
+      <h4 style="margin-top:8px">制造型企业</h4>
+      <p class="dim" style="font-size:14px">希望给传统设备/产线进行<strong>智能化升级</strong>，边缘 AI 推理</p>
+    </div>
+    <div class="card card-soft">
+      <span class="badge badge-blue">客群 C</span>
+      <h4 style="margin-top:8px">科研 / 教育 / AI 培训</h4>
+      <p class="dim" style="font-size:14px">期望完整体验 AI 大模型<strong>开发全流程</strong>的教学与研究机构</p>
+    </div>
+  </div>
+  <div class="notes">这三类客群的共同特点是：需要本地部署、预算敏感、不想依赖云端 API。Spark 的桌面形态和低价格完美匹配这些需求。</div>
+</section>
+
+<!-- P5: 硬件参数 -->
+<section class="slide" data-title="硬件参数">
+  <p class="kicker">Hardware Specs</p>
+  <h2 class="h2">关键参数一览</h2>
+  <table class="spec-table anim-fade-up" data-anim="fade-up">
+    <tr><th style="width:120px">参数</th><th style="width:200px">规格</th><th>解读</th></tr>
+    <tr><td><strong>GPU 架构</strong></td><td>GB10 · Blackwell</td><td>英伟达第 10 代架构（2024），最新一代</td></tr>
+    <tr><td><strong>模型精度</strong></td><td>FP16/BF16/FP8/FP4/NVFP4</td><td>NVFP4 算力达 <strong>1 PFLOPS</strong>；国产 GPU 大多不支持 FP4</td></tr>
+    <tr><td><strong>显存</strong></td><td>128 GB 统一内存</td><td>CPU/GPU 共享，实际可用 ~100GB</td></tr>
+    <tr><td><strong>网络</strong></td><td>双口 200GE（ConnectX-7）</td><td>一根线直连，无需交换机；2 台组网可跑 235B 模型</td></tr>
+    <tr><td><strong>CPU</strong></td><td>20 核 ARM</td><td>10×Cortex-X925 + 10×Cortex-A725</td></tr>
+    <tr><td><strong>功耗</strong></td><td>最大 170W</td><td>220V 市电即可，无需专用供电</td></tr>
+  </table>
+  <div class="notes">这张表是客户最关心的硬指标。重点强调三点：Blackwell 最新架构、128GB 大显存、170W 低功耗。特别是 NVFP4 精度，这是 Spark 的独家优势。</div>
+</section>
+
+<!-- P6: GPU 架构演进 -->
+<section class="slide" data-title="架构演进">
+  <p class="kicker">Architecture Evolution</p>
+  <h2 class="h2">NVIDIA GPU 架构演进</h2>
+  <div class="arch-timeline anim-stagger-list" data-anim-target>
+    <div class="arch-item">
+      <span class="year">2020</span>
+      <span class="name">第 8 代 Ampere<br>代表：A100</span>
+    </div>
+    <div class="arch-item">
+      <span class="year">2022</span>
+      <span class="name">第 9 代 Ada Lovelace<br>代表：L20</span>
+    </div>
+    <div class="arch-item">
+      <span class="year">2023</span>
+      <span class="name">第 9 代 Hopper<br>代表：H20 / H200</span>
+    </div>
+    <div class="arch-item latest">
+      <span class="year">2024 ✨</span>
+      <span class="name"><strong>第 10 代 Blackwell</strong><br>代表：Spark / B100</span>
+    </div>
+  </div>
+  <div class="card mt-l" style="border-left:3px solid var(--accent)">
+    <h4 style="margin-bottom:8px">💡 NVFP4 精度的意义</h4>
+    <p class="dim" style="font-size:14px;line-height:1.7">自 2025 年 DeepSeek 等大模型成功验证 FP8 量化技术后，低精度量化（FP8/FP4）已成为大模型高效推理的核心范式。<strong>NVFP4 相比 BF16/FP8，部署效率提升 1-3 倍，精度损失 &lt;2%</strong>。</p>
+    <p class="dim" style="font-size:13px;margin-top:8px">⚠️ 绝大多数国产 GPU 不支持 FP8/FP4；英伟达非 Blackwell 架构无法支持 FP4</p>
+  </div>
+  <div class="notes">这页要让客户理解：Spark 用的是最新的架构，支持最先进的量化精度。NVFP4 是 Spark 的核心竞争力，其他显卡做不到。</div>
+</section>
+
+<!-- P7: 软件解决方案 -->
+<section class="slide" data-title="软件方案">
+  <p class="kicker">Software Solution</p>
+  <h2 class="h2">DingTalk-AIStack 模型部署平台</h2>
+  <p class="lede" style="margin-bottom:24px">为上层 AI 应用提供模型 API 服务 · 与大一体机功能相同 + 定制化提升</p>
+  <div class="grid g2 anim-stagger-list" data-anim-target>
+    <div class="card">
+      <span class="badge badge-blue">场景 1</span>
+      <h4 style="margin-top:8px">接入企业悟空</h4>
+      <p class="dim" style="font-size:14px">通过"添加自定模型"入口，接入 Spark 部署的模型，<strong>不消耗算粒</strong></p>
+    </div>
+    <div class="card">
+      <span class="badge badge-green">场景 2</span>
+      <h4 style="margin-top:8px">Claude Code 自定义模型</h4>
+      <p class="dim" style="font-size:14px">配置 ANTHROPIC_BASE_URL 指向本地地址，使用一体机分配的 API Key</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-blue">场景 3</span>
+      <h4 style="margin-top:8px">Agent 搭建平台</h4>
+      <p class="dim" style="font-size:14px">DEAP / DIFY / COZE 等平台，均可通过自定义模型服务商方便接入</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-green">场景 4</span>
+      <h4 style="margin-top:8px">OpenClaw 等 AI 代理</h4>
+      <p class="dim" style="font-size:14px">Token 消耗量巨大，强烈建议使用本地模型，兼容 OpenAI 协议</p>
+    </div>
+  </div>
+  <div class="notes">软件方案是 Spark 的差异化价值。不只是卖硬件，而是提供完整的模型部署平台，让客户开箱就能用。重点强调可以接入悟空不消耗算粒这一点。</div>
+</section>
+
+<!-- P8: 推荐模型 + 性能 -->
+<section class="slide" data-title="推荐模型">
+  <p class="kicker">Recommended Models · NVFP4</p>
+  <h2 class="h2">Spark 单机推荐模型</h2>
+  <div class="grid g2 mt-l">
+    <div class="card card-accent anim-fade-up" data-anim="fade-up">
+      <h4>Qwen3-Next-80B-nvfp4</h4>
+      <p class="dim" style="font-size:13px;margin-bottom:12px">Qwen3-235B 的平替 · Spark 单机可部署</p>
+      <div class="row" style="gap:16px">
+        <div><p class="eyebrow">单并发</p><div style="font-size:32px;font-weight:800;color:var(--accent)">40</div><p class="dim" style="font-size:12px">tokens/s</p></div>
+        <div><p class="eyebrow">10路并发</p><div style="font-size:32px;font-weight:800;color:var(--text-1)">~16</div><p class="dim" style="font-size:12px">tokens/s/路</p></div>
+      </div>
+    </div>
+    <div class="card card-accent anim-fade-up" data-anim="fade-up">
+      <h4>Qwen3.5-122B-A10B-NVFP4</h4>
+      <p class="dim" style="font-size:13px;margin-bottom:12px">最新 Qwen3.5 架构 · 评测优于 Qwen3-235B</p>
+      <div class="row" style="gap:16px">
+        <div><p class="eyebrow">单并发</p><div style="font-size:32px;font-weight:800;color:var(--accent)">24-27</div><p class="dim" style="font-size:12px">tokens/s</p></div>
+        <div><p class="eyebrow">5-10路并发</p><div style="font-size:32px;font-weight:800;color:var(--text-1)">12-14</div><p class="dim" style="font-size:12px">tokens/s/路</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-m" style="border-left:3px solid var(--warn)">
+    <p class="dim" style="font-size:14px">⚠️ <strong>不适合高并发场景</strong>（超过 10 个并发）。受限于较小的显卡带宽（约 L20 的 1/4），并发能力有限。</p>
+  </div>
+  <div class="notes">这页用数据说话。两个推荐模型都是 NVFP4 精度，充分发挥 Spark 的硬件优势。同时要诚实告知不适合高并发，避免客户预期错位。</div>
+</section>
+
+<!-- P9: 竞品对比 -->
+<section class="slide" data-title="竞品对比">
+  <p class="kicker">Competitive Analysis</p>
+  <h2 class="h2">Spark vs RTX 4090 · 核心参数</h2>
+  <table class="spec-table anim-fade-up" data-anim="fade-up">
+    <tr><th style="width:140px">参数</th><th>🟢 DGX Spark</th><th>🔴 RTX 4090 + 服务器</th></tr>
+    <tr><td><strong>GPU 架构</strong></td><td><span class="badge badge-green">Blackwell（最新）</span></td><td><span class="badge badge-red">Ada Lovelace（2022）</span></td></tr>
+    <tr><td><strong>内存/显存</strong></td><td><strong>128 GB</strong> 统一内存</td><td>24 GB GDDR6X</td></tr>
+    <tr><td><strong>AI 算力</strong></td><td><strong>1000 TOPS</strong>（NVFP4）</td><td>~330 TOPS</td></tr>
+    <tr><td><strong>最低量化精度</strong></td><td>NV FP4（原生，精度损失极小）</td><td>INT4（暴力量化，精度损失大）</td></tr>
+    <tr><td><strong>整机形态</strong></td><td>桌面一体机，即插即用</td><td>需攒机 + 散热 + 调试</td></tr>
+    <tr><td><strong>整机功耗</strong></td><td>~200W</td><td>450W(GPU) + 300W(主机)</td></tr>
+  </table>
+  <div class="notes">这页是对比的核心。每一项 Spark 都占优。特别强调显存差距：128GB vs 24GB，这是决定能跑什么模型的关键。</div>
+</section>
+
+<!-- P10: 同价位模型能力 -->
+<section class="slide center tc" data-title="杀手锏">
+  <div style="max-width:900px">
+    <p class="kicker">Killer Feature 🔥</p>
+    <h2 class="h2" style="margin-bottom:32px">同价位能跑什么模型？</h2>
+    <div class="vs-grid">
+      <div class="vs-card vs-good card anim-fade-right" data-anim="fade-right">
+        <h3>🟢 DGX Spark</h3>
+        <ul>
+          <li><strong>Qwen3.5-122B</strong>（NV FP4）</li>
+          <li>参数量：<strong>1220 亿</strong></li>
+          <li>FP4 原生，几乎无损</li>
+          <li>复杂推理、长文、代码生成均流畅</li>
+        </ul>
+      </div>
+      <div class="vs-card vs-bad card anim-fade-left" data-anim="fade-left">
+        <h3>🔴 RTX 4090</h3>
+        <ul>
+          <li>Qwen3.5-27B（INT4）</li>
+          <li>参数量：270 亿</li>
+          <li>INT4 暴力量化，精度损失显著</li>
+          <li>复杂任务吃力，长文易截断</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lede mt-l" style="margin:24px auto 0;text-align:center;font-size:18px">
+      💡 "花同样的钱，Spark 跑<strong>千亿大模型</strong>，4090 只能跑<strong>百亿小模型</strong><br>差了近 5 倍，而且精度还更高。"
+    </p>
+  </div>
+  <div class="notes">这是最有杀伤力的一页。同价位，Spark 能跑的模型参数量是 4090 的近 5 倍。原因是显存：122B 模型 FP4 需要约 61GB，Spark 128GB 轻松装下，4090 只有 24GB 物理上装不下。</div>
+</section>
+
+<!-- P11: 一句话定性 -->
+<section class="slide center tc" data-title="定性总结">
+  <div>
+    <p class="kicker">One-Line Summary</p>
+    <div class="grid g2 mt-l" style="max-width:800px;margin-left:auto;margin-right:auto">
+      <div class="card card-accent anim-fade-up" data-anim="fade-up">
+        <div style="font-size:48px;margin-bottom:12px">🟢</div>
+        <h3>DGX Spark</h3>
+        <p class="dim">AI 原生服务器<br><strong>专为 AI 推理而生</strong></p>
+      </div>
+      <div class="card card-outline anim-fade-up" data-anim="fade-up">
+        <div style="font-size:48px;margin-bottom:12px">🔴</div>
+        <h3>RTX 4090</h3>
+        <p class="dim">通用消费级显卡<br>游戏/创作/AI 全能，但不精</p>
+      </div>
+    </div>
+  </div>
+  <div class="notes">一句话总结：Spark 是 AI 原生设备，4090 是通用设备。就像专业相机和手机拍照的区别。</div>
+</section>
+
+<!-- P12: 产品报价 -->
+<section class="slide" data-title="产品报价">
+  <p class="kicker">Pricing</p>
+  <h2 class="h2">产品报价</h2>
+  <table class="spec-table anim-fade-up" data-anim="fade-up">
+    <tr><th style="width:100px">大类</th><th>内容</th><th style="width:100px">单价</th><th style="width:60px">数量</th><th style="width:100px">价格</th></tr>
+    <tr><td><span class="badge badge-blue">必选</span></td><td><strong>主机 2T 版本</strong>，含 1 年质保</td><td>¥40,000</td><td>1</td><td><strong>¥40,000</strong></td></tr>
+    <tr><td><span class="badge badge-green">可选</span></td><td>DAC 连接线（多台虚拟化，不建议）</td><td>¥600</td><td>0</td><td>¥0</td></tr>
+    <tr><td><span class="badge badge-green">可选</span></td><td><strong>模型管理平台</strong>（免费接入悟空技术支持）<br><span class="dim" style="font-size:12px">兼容非阿里系 AI 工作平台</span></td><td>¥10,000</td><td>1</td><td>¥10,000</td></tr>
+    <tr><td><span class="badge badge-green">可选</span></td><td><strong>交付培训</strong>（人天）<br><span class="dim" style="font-size:12px">模型搭建 / 参数调优 / 技术咨询</span></td><td>¥10,000</td><td>1</td><td>¥10,000</td></tr>
+    <tr style="background:var(--bg-soft)"><td colspan="4" style="text-align:right"><strong>汇总</strong></td><td style="font-size:20px;font-weight:800;color:var(--accent)">¥60,000</td></tr>
+  </table>
+  <div class="notes">报价透明清晰。硬件 4 万是必选，软件平台和交付培训各 1 万是可选。全套 6 万。对于企业级 AI 部署来说，这个价格非常有竞争力。</div>
+</section>
+
+<!-- P13: Thanks -->
+<section class="slide center tc" data-title="感谢">
+  <div>
+    <h1 class="h1" style="font-size:120px;line-height:1"><span class="gradient-text">Thank You</span></h1>
+    <p class="lede" style="margin:24px auto">DGX Spark · 让每张桌面都拥有 AI 算力</p>
+    <div class="row wrap mt-l" style="justify-content:center">
+      <span class="pill pill-accent">钉钉悟空团队</span>
+      <span class="pill">2026</span>
+    </div>
+  </div>
+  <div class="notes">感谢聆听。如有任何问题，欢迎随时联系我们钉钉悟空团队。</div>
+</section>
+
+</div>
+<script src="assets/runtime.js"></script>
+</body>
+</html>
