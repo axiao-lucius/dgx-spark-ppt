@@ -437,19 +437,22 @@
     <p class="kicker">Downloads</p>
     <h2 class="h2" style="margin-bottom:32px">产品资料下载</h2>
     <div class="grid g2" style="gap:20px">
-      <a href="references/FusionXpark-GB10-彩页.pdf" target="_blank" class="card card-hover" style="text-decoration:none;text-align:left;cursor:pointer">
+      <div class="card card-hover" style="text-align:left;cursor:pointer" onclick="downloadPDF('references/FusionXpark-GB10-彩页.pdf','FusionXpark-GB10-彩页.pdf',this)">
         <div style="font-size:36px;margin-bottom:12px">📄</div>
         <h4 style="color:var(--text-1)">FusionXpark™ GB10 产品彩页</h4>
-        <p class="dim" style="font-size:13px;margin-top:8px">产品外观、核心特性、技术规格速览<br><span style="color:var(--accent)">点击打开 PDF →</span></p>
-      </a>
-      <a href="references/FusionXpark-GB10-技术白皮书.pdf" target="_blank" class="card card-hover" style="text-decoration:none;text-align:left;cursor:pointer">
+        <p class="dim" style="font-size:13px;margin-top:8px">产品外观、核心特性、技术规格速览<br><span class="dl-hint" style="color:var(--accent)">点击下载 PDF ↓</span></p>
+      </div>
+      <div class="card card-hover" style="text-align:left;cursor:pointer" onclick="downloadPDF('references/FusionXpark-GB10-技术白皮书.pdf','FusionXpark-GB10-技术白皮书.pdf',this)">
         <div style="font-size:36px;margin-bottom:12px">📘</div>
         <h4 style="color:var(--text-1)">FusionXpark™ GB10 技术白皮书</h4>
-        <p class="dim" style="font-size:13px;margin-top:8px">硬件描述、软件平台、完整规格、认证信息<br><span style="color:var(--accent)">点击打开 PDF →</span></p>
-      </a>
+        <p class="dim" style="font-size:13px;margin-top:8px">硬件描述、软件平台、完整规格、认证信息<br><span class="dl-hint" style="color:var(--accent)">点击下载 PDF ↓</span></p>
+      </div>
+    </div>
+    <div id="wx-tip" style="display:none;margin-top:20px;padding:14px 20px;background:var(--surface-2);border-radius:var(--radius-sm);font-size:13px;color:var(--text-2);line-height:1.7;text-align:left">
+      💡 <strong>微信内打开？</strong>如点击后无法下载，请点右上角 <strong>「···」→「在浏览器中打开」</strong>，即可正常下载 PDF 文件。
     </div>
   </div>
-  <div class="notes">这页提供两份原始文档的下载链接，客户可以直接点击查看完整的彩页和技术白皮书。</div>
+  <div class="notes">这页提供两份原始文档的下载链接。使用 JS Blob 下载绕过微信内置浏览器对 target="_blank" 和 PDF 直接链接的拦截。</div>
 </section>
 
 <!-- P17: Thanks -->
@@ -467,5 +470,36 @@
 
 </div>
 <script src="assets/runtime.js"></script>
+<script>
+function isWeChat(){return /MicroMessenger/i.test(navigator.userAgent)}
+function downloadPDF(url,filename,el){
+  var hint=el.querySelector('.dl-hint');
+  var origText=hint?hint.textContent:'';
+  if(hint)hint.textContent='⏳ 下载中...';
+  fetch(url).then(function(r){
+    if(!r.ok)throw new Error(r.status);
+    return r.blob();
+  }).then(function(blob){
+    var a=document.createElement('a');
+    var objUrl=window.URL.createObjectURL(blob);
+    a.href=objUrl;a.download=filename;
+    document.body.appendChild(a);a.click();
+    setTimeout(function(){document.body.removeChild(a);window.URL.revokeObjectURL(objUrl)},200);
+    if(hint)hint.textContent='✅ 下载完成';
+    setTimeout(function(){if(hint)hint.textContent=origText},3000);
+  }).catch(function(e){
+    console.error('Download failed:',e);
+    if(isWeChat()){
+      var tip=document.getElementById('wx-tip');
+      if(tip)tip.style.display='block';
+      if(hint)hint.textContent='⚠️ 请右上角「在浏览器打开」';
+    }else{
+      window.open(url,'_blank');
+      if(hint)hint.textContent=origText;
+    }
+  });
+}
+if(isWeChat()){var t=document.getElementById('wx-tip');if(t)t.style.display='block'}
+</script>
 </body>
 </html>
