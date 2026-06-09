@@ -2,7 +2,7 @@
 <html lang="zh-CN" data-theme="corporate-clean">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DGX Spark · AI 算力服务器产品推介</title>
+<title>FusionXpark™ GB10 · AI 算力服务器产品推介</title>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" id="theme-link" href="assets/themes/corporate-clean.css">
@@ -39,11 +39,11 @@
 <!-- P1: Cover -->
 <section class="slide is-active" data-title="封面">
   <div class="anim-stagger-list">
-    <p class="kicker">NVIDIA DGX Spark · 产品推介</p>
+    <p class="kicker">FusionXpark™ GB10 · 超聚变 × NVIDIA · 产品推介</p>
     <h1 class="h1 anim-fade-up" data-anim="fade-up">
       全球最小 <span class="gradient-text">AI 算力服务器</span><br>麻雀虽小，五脏俱全
     </h1>
-    <p class="lede">轻量级私有化大模型部署方案 · 桌面即机房 · 插电即用</p>
+    <p class="lede">NVIDIA GB10 Grace Blackwell 超级芯片 · 桌面即机房 · 插电即用</p>
     <div class="row wrap mt-l">
       <span class="pill pill-accent">Blackwell 架构</span>
       <span class="pill">128GB 统一内存</span>
@@ -309,7 +309,150 @@
   <div class="notes">报价透明清晰。硬件 4 万是必选，软件平台和交付培训各 1 万是可选。全套 6 万。对于企业级 AI 部署来说，这个价格非常有竞争力。</div>
 </section>
 
-<!-- P13: Thanks -->
+<!-- P13: FusionXplay™ 软件平台 -->
+<section class="slide" data-title="FusionXplay™">
+  <p class="kicker">Software Platform</p>
+  <h2 class="h2">FusionXplay™ 一站式 AI 开发工作空间</h2>
+  <p class="lede" style="margin-bottom:20px">预装现代化 Linux 运维管理面板 · Web 界面轻松管理模型、应用、容器、数据库</p>
+  <div class="grid g3 anim-stagger-list" data-anim-target>
+    <div class="card">
+      <h4>🤖 AI 模型管理</h4>
+      <p class="dim" style="font-size:13px">基于 Ollama + TensorRT LLM<br>一体化模型部署、管理和调用<br>预装调优 FP4 精度模型</p>
+    </div>
+    <div class="card">
+      <h4>🔌 MCP 服务管理</h4>
+      <p class="dim" style="font-size:13px">Model Context Protocol Server<br>集中管理中心，支持多种类型<br>方便 AI 应用远程调用</p>
+    </div>
+    <div class="card">
+      <h4>📊 GPU 实时监控</h4>
+      <p class="dim" style="font-size:13px">GPU 资源可视化监控<br>适用于 AI 计算、深度学习<br>图形渲染等高密集场景</p>
+    </div>
+    <div class="card">
+      <h4>🛒 应用商店</h4>
+      <p class="dim" style="font-size:13px">MaxKB · UPage · n8n · LobeChat<br>Langflow · vLLM · OpenWebUI<br>One API · LocalAI 等一键安装</p>
+    </div>
+    <div class="card">
+      <h4>🔧 高效运维</h4>
+      <p class="dim" style="font-size:13px">容器管理 · 主机监控<br>文件管理 · 数据库管理<br>Web 应用防火墙 · 在线升级</p>
+    </div>
+    <div class="card">
+      <h4>🧰 AI 软件工具链</h4>
+      <p class="dim" style="font-size:13px">NVIDIA NIM™ · Blueprints<br>AI Workbench · CUDA<br>JupyterLab · Python · Docker</p>
+    </div>
+  </div>
+  <div class="notes">FusionXplay 是超聚变自研的一站式 AI 开发平台，预装在设备上。它把模型管理、应用商店、运维监控全部整合到 Web 界面里，极大降低了使用门槛。</div>
+</section>
+
+<!-- P14: 完整技术规格 -->
+<section class="slide" data-title="完整规格">
+  <p class="kicker">Full Specifications</p>
+  <h2 class="h2">完整技术规格</h2>
+  <div class="grid g2 mt-m" style="gap:16px">
+    <div>
+      <table class="spec-table" style="margin-top:0;font-size:12px">
+        <tr><th colspan="2">核心性能</th></tr>
+        <tr><td style="width:100px"><strong>架构</strong></td><td>NVIDIA Grace Blackwell</td></tr>
+        <tr><td><strong>CUDA Core</strong></td><td>6144</td></tr>
+        <tr><td><strong>Tensor Core</strong></td><td>第五代 · 1 PFLOP (FP4)</td></tr>
+        <tr><td><strong>RT Core</strong></td><td>第四代</td></tr>
+        <tr><td><strong>数据格式</strong></td><td>TF32/FP16/BF16/INT8/FP8/FP6/FP4</td></tr>
+        <tr><td><strong>内存</strong></td><td>128GB LPDDR5x · 8533MHz · 273GB/s</td></tr>
+        <tr><td><strong>存储</strong></td><td>1/2/4TB NVMe M.2 (AES 自加密)</td></tr>
+      </table>
+    </div>
+    <div>
+      <table class="spec-table" style="margin-top:0;font-size:12px">
+        <tr><th colspan="2">接口与连接</th></tr>
+        <tr><td style="width:100px"><strong>USB</strong></td><td>4× USB4 Type-C (含 DP Alt Mode)</td></tr>
+        <tr><td><strong>显示</strong></td><td>1× HDMI 2.1a (多通道音频)</td></tr>
+        <tr><td><strong>以太网</strong></td><td>1× RJ-45 10GE</td></tr>
+        <tr><td><strong>高速网络</strong></td><td>2× QSFP ConnectX-7 (200GE)</td></tr>
+        <tr><td><strong>无线</strong></td><td>Wi-Fi 7 + BT 5.4</td></tr>
+        <tr><td><strong>编解码</strong></td><td>1× NVENC + 1× NVDEC</td></tr>
+        <tr><td><strong>供电</strong></td><td>USB-C PD 48V/5A · 240W 适配器</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="grid g3 mt-m" style="gap:12px">
+    <div class="card-soft" style="padding:12px 16px;border-radius:var(--radius-sm)">
+      <p class="eyebrow" style="margin-bottom:4px">物理规格</p>
+      <p class="dim" style="font-size:13px;margin:0"><strong>150×150×51mm</strong> · 1.2kg</p>
+    </div>
+    <div class="card-soft" style="padding:12px 16px;border-radius:var(--radius-sm)">
+      <p class="eyebrow" style="margin-bottom:4px">环境要求</p>
+      <p class="dim" style="font-size:13px;margin:0">工作 10-35℃ · 噪音 ≤29dBA</p>
+    </div>
+    <div class="card-soft" style="padding:12px 16px;border-radius:var(--radius-sm)">
+      <p class="eyebrow" style="margin-bottom:4px">安全特性</p>
+      <p class="dim" style="font-size:13px;margin:0">TPM 2.0 · UEFI 安全启动 · SED</p>
+    </div>
+  </div>
+  <div class="notes">这页展示完整的技术规格，供技术人员参考。左右两栏分别展示核心性能和接口连接，底部三个卡片展示物理规格、环境要求和安全特性。</div>
+</section>
+
+<!-- P15: 兼容模型 + 认证 -->
+<section class="slide" data-title="兼容与认证">
+  <p class="kicker">Compatibility & Certification</p>
+  <h2 class="h2">兼容模型与国际认证</h2>
+  <div class="grid g2 mt-l">
+    <div>
+      <h4 style="margin-bottom:12px">✅ 已验证兼容模型（FP4）</h4>
+      <div class="card" style="font-size:13px;line-height:1.8">
+        <p class="dim" style="margin:0">
+          • Qwen3-8B-FP4<br>
+          • Qwen3-14B-FP4<br>
+          • Qwen3-30B-A3B-FP4<br>
+          • Qwen3-32B-FP4<br>
+          • Qwen3-235B-A22B-FP4<br>
+          • DeepSeek-R1-Distill-Llama-8B-FP4<br>
+          • DeepSeek-R1-Distill-Qwen-32B-FP4<br>
+          • Llama-3.3-70B-Instruct-FP4<br>
+          <span style="color:var(--accent)">• 支持 Ollama 官网全部模型</span>
+        </p>
+      </div>
+    </div>
+    <div>
+      <h4 style="margin-bottom:12px">🏅 通过的认证</h4>
+      <div class="card" style="font-size:13px;line-height:1.8">
+        <p class="dim" style="margin:0">
+          🇪🇺 <strong>CE</strong> (RED) · RoHS · ErP<br>
+          🇨🇳 <strong>CCC</strong> · SRRC · RoHS<br>
+          🇯🇵 <strong>VCCI</strong> · TELEC · RoHS<br>
+          🌍 <strong>CB</strong> (IEC 62368-1)<br>
+        </p>
+        <p class="dim" style="margin-top:12px;font-size:12px">
+          制造商：超聚变数字技术股份有限公司<br>
+          咨询电话：400-080-6888<br>
+          技术服务热线：400-009-8999
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="notes">这页展示兼容模型列表和国际认证信息，增强客户信任感。特别强调支持 Ollama 全部模型，意味着模型生态非常丰富。</div>
+</section>
+
+<!-- P16: 附件下载 -->
+<section class="slide center tc" data-title="资料下载">
+  <div style="max-width:700px">
+    <p class="kicker">Downloads</p>
+    <h2 class="h2" style="margin-bottom:32px">产品资料下载</h2>
+    <div class="grid g2" style="gap:20px">
+      <a href="references/FusionXpark-GB10-彩页.pdf" target="_blank" class="card card-hover" style="text-decoration:none;text-align:left;cursor:pointer">
+        <div style="font-size:36px;margin-bottom:12px">📄</div>
+        <h4 style="color:var(--text-1)">FusionXpark™ GB10 产品彩页</h4>
+        <p class="dim" style="font-size:13px;margin-top:8px">产品外观、核心特性、技术规格速览<br><span style="color:var(--accent)">点击打开 PDF →</span></p>
+      </a>
+      <a href="references/FusionXpark-GB10-技术白皮书.pdf" target="_blank" class="card card-hover" style="text-decoration:none;text-align:left;cursor:pointer">
+        <div style="font-size:36px;margin-bottom:12px">📘</div>
+        <h4 style="color:var(--text-1)">FusionXpark™ GB10 技术白皮书</h4>
+        <p class="dim" style="font-size:13px;margin-top:8px">硬件描述、软件平台、完整规格、认证信息<br><span style="color:var(--accent)">点击打开 PDF →</span></p>
+      </a>
+    </div>
+  </div>
+  <div class="notes">这页提供两份原始文档的下载链接，客户可以直接点击查看完整的彩页和技术白皮书。</div>
+</section>
+
+<!-- P17: Thanks -->
 <section class="slide center tc" data-title="感谢">
   <div>
     <h1 class="h1" style="font-size:120px;line-height:1"><span class="gradient-text">Thank You</span></h1>
